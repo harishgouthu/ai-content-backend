@@ -1,0 +1,14 @@
+# Dockerfile.wav2lip
+FROM python:3.9-slim
+
+WORKDIR /backend
+
+# Copy all project files into the container
+COPY . /backend
+
+# Upgrade pip and install dependencies for Wav2Lip processing
+RUN pip install --upgrade pip && \
+    pip install numpy==1.23.5 opencv-python
+
+# Set the default command to run main.py in Wav2Lip mode
+CMD ["python", "main.py", "--service", "wav2lip"]

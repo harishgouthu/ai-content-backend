@@ -1,0 +1,19 @@
+# Ignore virtual environments
+venv/
+tts_env/
+wav2lip_env/
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Output files
+output/
+uploads/
+*.mp4
+*.wav
+*.avi
+
+# Ignore IDE files
+.vscode/
+.idea/

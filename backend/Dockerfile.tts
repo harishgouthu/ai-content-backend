@@ -1,0 +1,15 @@
+# Use a slim Python base image
+FROM python:3.9-slim
+
+# Set the working directory to /backend
+WORKDIR /backend
+
+# Copy all project files into the container
+COPY . /backend
+
+# Upgrade pip and install dependencies for TTS processing
+RUN pip install --upgrade pip && \
+    pip install --no-cache-dir --default-timeout=100 numpy==1.22.0 TTS==0.22.0
+
+# Set the default command to run main.py in TTS mode
+CMD ["python", "main.py", "--service", "tts"]
